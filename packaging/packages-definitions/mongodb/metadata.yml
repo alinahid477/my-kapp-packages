@@ -1,0 +1,11 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  # This will be the name of our package
+  name: mongodb.anahid.local
+spec:
+  displayName: "Mongodb"
+  longDescription: "Ali Nahid's distribution of MongoDB"
+  shortDescription: "ANAHID's mongodb"
+  categories:
+  - database

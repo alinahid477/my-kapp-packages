@@ -1,0 +1,10 @@
+#@data/values-schema
+---
+#@schema/desc "Base64 encoded InitDB root username: adminuser."
+initdb_root_username: YWRtaW51c2Vy
+#@schema/desc "Base64 encoded InitDB root password: password123."
+initdb_root_password: cGFzc3dvcmQxMjM=
+#@schema/desc "MongoDB service Name."
+serviceName: mongodb-svc
+#@schema/desc "MongoDB service type."
+serviceType: ClusterIP
