@@ -1,0 +1,12 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  name: <PACKAGE_FQDN>
+spec:
+  displayName: "<PACKAGE_NAME>"
+  longDescription: "<PACKAGE_LONG_DESCRIPTION>"
+  shortDescription: "<PACKAGE_SHORT_DESCRIPTION>"
+  iconSVGBase64: <PACKAGE_ICON_SVG_CODE>
+  providerName: <PACKAGE_PROVIDER_NAME>
+  maintainers: <PACKAGE_MAINTAINERS>
+  categories: <PACKAGE_CATEGORIES>

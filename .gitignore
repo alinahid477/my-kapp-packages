@@ -3,3 +3,10 @@ packaging/repos/*
 schema-openapi.yml
 .bash_history
 images.yml
+binaries/tmc
+.kube/*
+!.kube/.gitkeep
+.ssh/*
+!.ssh/.gitkeep
+.env
+.vmware-cna-saas

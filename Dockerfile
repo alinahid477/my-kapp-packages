@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
 	curl \
     nano \
     less \
+	openssh-client \
+	psmisc \
 	net-tools \
     iputils-ping \
     libdigest-sha-perl \
@@ -28,6 +30,9 @@ RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${
 
 RUN curl -L https://carvel.dev/install.sh | bash
 
+
+COPY binaries/tmc /usr/local/bin/
+RUN chmod +x /usr/local/bin/tmc
 
 COPY binaries/wizards/init.sh /usr/local/
 RUN chmod +x /usr/local/init.sh

@@ -1,0 +1,46 @@
+#@ load("@ytt:data", "data")
+
+#@ def labels():
+app: "octant"
+#@ end
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels: #@ labels()
+  name: #@ data.values.serviceName
+spec:
+  clusterIP: None
+  ports:
+  - port: 51234
+    targetPort: 51234
+    protocol: TCP
+  selector: #@ labels()
+  type: #@ data.values.serviceType
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: #@ labels()
+  name: octant
+spec:
+  replicas: 1
+  selector:
+    matchLabels: #@ labels()
+  template:
+    metadata:
+      labels: #@ labels()
+    spec:
+      containers:
+      - name: octant
+        image: accordingtoali/octantimg:latest        
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: config
+          mountPath: "/.kube"
+      volumes:
+      - name: config
+        configMap:
+          name: #@ data.values.kubeconfigMapName

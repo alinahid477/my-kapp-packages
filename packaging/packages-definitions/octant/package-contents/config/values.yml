@@ -1,0 +1,8 @@
+#@data/values-schema
+---
+#@schema/desc "Octant kubeconfig configmap name."
+kubeconfigMapName: octant-configmap
+#@schema/desc "Octant service Name."
+serviceName: octant-svc
+#@schema/desc "Octant service type."
+serviceType: ClusterIP

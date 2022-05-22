@@ -1,0 +1,11 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  # This will be the name of our package
+  name: octant.anahid.local
+spec:
+  displayName: "Octant"
+  longDescription: "Ali Nahid's distribution of Octant v 0.25.1"
+  shortDescription: "Octant"
+  categories:
+  - utility
