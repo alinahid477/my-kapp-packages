@@ -33,6 +33,7 @@ spec:
     metadata:
       labels: #@ labels()
     spec:
+      serviceAccountName: package-deployer
       containers:
       - name: octant
         image: accordingtoali/octantimg:latest        

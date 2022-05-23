@@ -1,0 +1,7 @@
+#@data/values-schema
+---
+#@schema/desc "Port number for the service. FYI: Container is exposing 8080."
+svc_port: 80
+#@schema/desc "greeting text when app is pinged. http://{domai-OR-ip}:{svc_port}/api/greetings/do"
+greeting_text: Hello world!!!
+service_type: LoadBalancer

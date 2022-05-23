@@ -1,0 +1,12 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  # This will be the name of our package
+  name: simple-greetings.anahid.local
+spec:
+  displayName: "Simple Greeting"
+  longDescription: "Simple Greetings consisting of a k8s deployment and service"
+  shortDescription: "Simple Greetings for demoing"
+  categories:
+  - demo
+  - java

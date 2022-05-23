@@ -1,0 +1,41 @@
+#@ load("@ytt:data", "data")
+
+#@ def labels():
+app: simple-greetings
+#@ end
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: simple-greetings
+spec:
+  selector:
+    matchLabels: #@ labels()
+  template:
+    metadata:
+      labels: #@ labels()
+    spec:
+      serviceAccountName: package-deployer
+      containers:
+      - name: simple-greetings
+        image: docker.io/accordingtoali/simple-greetings:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        env:
+        - name: GREETING_TEXT
+          value: #@ data.values.greeting_text
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: simple-greetings
+spec:
+  ports:
+  - port: #@ data.values.svc_port
+    targetPort: 8080
+  selector: #@ labels()
+  type: #@ data.values.service_type
