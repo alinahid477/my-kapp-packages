@@ -2,4 +2,7 @@
 
 kubectl create secret docker-registry dockerhubregkey --docker-server=https://index.docker.io/v2/ --docker-username=<dockerhub username> --docker-password=<dockerhubpassword> --docker-email=your@email.com --namespace default
 
+kubectl create secret docker-registry dockerhubregkey --docker-server=https://index.docker.io/v2/ --docker-username=<dockerhub username> --docker-password=<dockerhubpassword> --docker-email=your@email.com --namespace tanzu-package-repo-global
+
 kubectl apply -f rolebinding.yaml
+kapp deploy -a anahid-custom-kapp-repo -f packaging/repository.yaml -y -n tanzu-package-repo-global

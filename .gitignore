@@ -10,3 +10,4 @@ binaries/tmc
 !.ssh/.gitkeep
 .env
 .vmware-cna-saas
+*.nogit.*

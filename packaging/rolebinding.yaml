@@ -3,7 +3,8 @@ kind: ServiceAccount
 metadata:
   name: package-deployer
   namespace: default
-  imagePullSecrets: dockerhubregkey
+imagePullSecrets:
+- name: dockerhubregkey
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1

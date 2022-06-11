@@ -1,0 +1,11 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageRepository
+metadata:
+  name: anahid-custom-kapp-repo
+spec:
+  fetch:
+    imgpkgBundle:
+      image: accordingtoali/anahid-custom-kapp-repo:1.0.0
+      secretRef:
+        name: dockerhubregkey
